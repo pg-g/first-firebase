@@ -1,0 +1,61 @@
+<html ng-app='angFB'>
+<head>
+	<title>My First (Robust?) App!</title>
+	<link href='style.css' rel='stylesheet'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body ng-controller='control'>
+
+	<h1>
+		<i style='margin-bottom:10px; border: 1px solid white; border-radius: 50%; padding: 20px;' class="fa fa-users fa-2x"></i>
+		<br />
+		F R 3 | N D $</h1>
+
+	<form>
+		<p>Add a Friend</p>
+		<input placeholder='Name' type='text' ng-model='newFriend.name'>
+		<input placeholder='Age' type='text' ng-model='newFriend.age'>
+		<input placeholder='Twitter Handle (sans @)' type='text' ng-model='newFriend.twitter'>
+		<button class='addBtn' ng-click='addFriend(newFriend)'>Submit</button>
+	</form>
+	
+	<br /><br />
+
+<div class='list'>
+	<p>Cool Friends</p>
+	<div class='friends' ng-repeat='friend in friends | filter:{status:true}'>
+		<p>
+		<i class="fa fa-user"></i>
+		<strong>{{friend.name}}</strong>, {{friend.age}}&nbsp;&nbsp;
+		<i ng-click='makeLame(friend)' class="fa fa-arrow-circle-o-right"></i>
+		<br />
+		<a href='http://twitter.com/{{friend.twitter}}'><i class="fa fa-twitter"></i>@{{friend.twitter}}</a>
+		</p>
+	</div>
+</div>
+
+<div class='list'>
+	<p>Lame Friends</p>
+	<div class='friends' style='text-align:right' ng-repeat='friend in friends | filter:{status:false}' ng-click='removeFriend(goober)'>
+		<p><i ng-click='makeLame(friend)' class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;
+		<strong>{{friend.name}}</strong>, {{friend.age}} <i class="fa fa-user"></i><br />
+		<a href='http://twitter.com/{{friend.twitter}}'>@{{friend.twitter}} <i class="fa fa-twitter"></i></a>
+		<br />
+		<i ng-click='removeFriend(friend)' class="fa fa-times-circle"></i>
+		</p>
+	</div>
+</div>
+
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
+	<!-- Local Scripts -->
+	<script src='app.js'></script>
+	<script src='control.js'></script>
+	<script src='service.js'></script>
+
+</body>
+</html>

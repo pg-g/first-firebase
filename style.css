@@ -1,0 +1,56 @@
+html {
+	background-color: #336E7B;
+	color: white;
+	font-family: 'Impact';
+	margin-top: 3%;
+}
+
+body {
+	width: 60%;
+	margin: auto;
+	text-align: center;
+}
+
+input {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 15px;
+	padding: 10px;
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+
+.addBtn {
+	padding: 10px 25px;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	color: #336E7B;
+	float: right;
+}
+.addBtn:hover {
+	background-color: #F2F1EF;
+	border: 1px solid #F2F1EF;
+}
+
+.list {
+	float: left;
+	width: 45%;
+	background-color: #F2784B;
+	margin: 10px;
+}
+
+.friends {
+	font-family: 'Helvetica', sans-serif;
+	font-size: 20px;
+	line-height: 1.3em;
+	text-align: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
